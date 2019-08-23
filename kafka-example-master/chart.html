@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+ 
+    <body>
+
+        <canvas id="mymcsChart"></canvas>
+        
+        <script>
+
+$.ajax({
+            type: 'GET',
+            url: "http://localhost:3000/api/employees",
+            success:function(data){
+             console.log(data);
+            }
+        });
+
+            message=[];
+            var ctx = document.getElementById('mymcsChart').getContext('2d');
+
+            var mymcsChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    datasets: [{
+                        label: 'Motor Current Sh',
+                        data: [12, 19, 3, 5, 2, 3],
+                        fill: true,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(46, 204, 113, 0.75)",
+                        borderColor: "rgba(46, 204, 113, 1)",
+                        pointHoverBackgroundColor: "rgba(211, 72, 54, 1)",
+                        pointHoverBorderColor: "rgba(211, 72, 54, 1)",
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
+    </body>
+
+</html>
