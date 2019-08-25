@@ -28,7 +28,7 @@ node producer.app.js
 take network panel in your browser
 inside ws: you can see our socket running
 
-Now pass the value from consumer to http://localhost:3000/stream  using requestify npm package // this need to bbe implemented
+Now pass the value from consumer to http://localhost:3000/stream  using requestify npm package
 
 # Architecture
 
