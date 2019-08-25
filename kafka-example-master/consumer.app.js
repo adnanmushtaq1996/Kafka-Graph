@@ -1,4 +1,5 @@
 const kafka = require('kafka-node');
+var requestify = require('requestify');
 const config = {
   kafka_topic: 'example1',
   kafka_server: 'localhost:2181',
@@ -22,6 +23,11 @@ try {
 
     // data.push(message.value);
     // messageData.push(data);
+
+    requestify.post('http://localhost:3000/stream', message.value)
+      .then(function (response) {
+        console.log('data sending to stream node.js')
+      });
 
   })
 
