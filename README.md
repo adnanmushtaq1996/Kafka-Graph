@@ -13,9 +13,9 @@ npm install
 node app.js 
 ```
 
-your html file is unser public/index.html
+your html file is under public/index.html
 
-Take a browser open in `http://localhost:3000`
+In browser open, `http://localhost:3000`
 
 
 now start producer and consumer,
