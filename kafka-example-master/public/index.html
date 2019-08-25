@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script>
+        var socket = io();
+        socket.on('echo', function (msg) {
+            console.log(msg)
+        });
+    </script>
+
+<body>
+
+    <canvas id="mymcsChart"></canvas>
+
+    <script>
+        message = [];
+        var ctx = document.getElementById('mymcsChart').getContext('2d');
+
+        var mymcsChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: 'Motor Current Sh',
+                    data: [12, 19, 3, 5, 2, 3],
+                    fill: true,
+                    lineTension: 0.1,
+                    backgroundColor: "rgba(46, 204, 113, 0.75)",
+                    borderColor: "rgba(46, 204, 113, 1)",
+                    pointHoverBackgroundColor: "rgba(211, 72, 54, 1)",
+                    pointHoverBorderColor: "rgba(211, 72, 54, 1)",
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

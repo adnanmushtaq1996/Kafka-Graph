@@ -17,6 +17,7 @@
     "express": "^4.17.1",
     "kafka-node": "^2.6.1",
     "nodemon": "^1.17.3",
-    "require": "^2.4.20"
+    "require": "^2.4.20",
+    "socket.io": "^2.2.0"
   }
 }
